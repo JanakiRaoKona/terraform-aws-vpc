@@ -13,7 +13,7 @@ variable "vpc_cidr" {
   default = "10.0.0.0/16"
 }
 # optional 
-variable "comman_tags" {
+variable "vpc_tags" {
   type    = map(any)
   default = {}
 
