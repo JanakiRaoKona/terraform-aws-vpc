@@ -7,4 +7,5 @@ locals {
     Name        = local.comman_name
 
   }
+  az_zones = slice(data.aws_availability_zones.available.names, 0, 2)
 }
