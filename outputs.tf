@@ -3,5 +3,5 @@ output "vpc_id" {
 }
 
 output "az_zones" {
-  value = aws_availability_zones.available.group_names
+  value = data.aws_availability_zones.available
 }
