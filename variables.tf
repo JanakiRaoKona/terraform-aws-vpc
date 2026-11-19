@@ -70,6 +70,11 @@ variable "nat_gate_way_tags" {
   default = {}
 
 }
+variable "vpc_peering_tags" {
+  type    = map(any)
+  default = {}
+
+}
 
 variable "public_subnet_cidrs" {
   type    = list(any)
@@ -87,4 +92,7 @@ variable "database_subnet_cidrs" {
   type    = list(any)
   default = ["10.0.21.0/24", "10.0.22.0/24"]
 
+}
+variable "is_peering_required" {
+  default = false
 }

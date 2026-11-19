@@ -88,7 +88,7 @@ resource "aws_route_table" "private" {
     var.public_route_table_tags,
     local.comman_tags,
     {
-      Name = "${local.comman_name}-public" # roboshop-dev-public
+      Name = "${local.comman_name}-private" # roboshop-dev-private
     }
   )
 }
@@ -98,7 +98,7 @@ resource "aws_route_table" "database" {
     var.public_route_table_tags,
     local.comman_tags,
     {
-      Name = "${local.comman_name}-public" # roboshop-dev-public
+      Name = "${local.comman_name}-database" # roboshop-dev-database
     }
   )
 }
