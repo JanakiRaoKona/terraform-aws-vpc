@@ -1,11 +1,9 @@
 # mandatory 
 variable "project" {
   type = string
-
 }
 variable "environment" {
   type = string
-
 }
 # optional 
 variable "vpc_cidr" {

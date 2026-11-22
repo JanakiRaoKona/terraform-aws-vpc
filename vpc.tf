@@ -10,7 +10,7 @@ resource "aws_vpc" "main" {
 }
 
 resource "aws_internet_gateway" "main" {
-  vpc_id = aws_vpc.main.id
+  vpc_id = aws_vpc.main.id # attaching to vpc 
 
   tags = merge(
     var.igw_tags,
@@ -85,7 +85,7 @@ resource "aws_route_table" "public" {
 resource "aws_route_table" "private" {
   vpc_id = aws_vpc.main.id
   tags = merge(
-    var.public_route_table_tags,
+    var.private_route_table_tags,
     local.comman_tags,
     {
       Name = "${local.comman_name}-private" # roboshop-dev-private
@@ -95,7 +95,7 @@ resource "aws_route_table" "private" {
 resource "aws_route_table" "database" {
   vpc_id = aws_vpc.main.id
   tags = merge(
-    var.public_route_table_tags,
+    var.database_route_table_tags,
     local.comman_tags,
     {
       Name = "${local.comman_name}-database" # roboshop-dev-database
